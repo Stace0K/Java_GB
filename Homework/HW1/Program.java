@@ -29,7 +29,7 @@ public class Program {
                     task2();
                     break;
                 case 3:
-
+                    task3();
                     break;
                 case 0:
                     System.out.println("^_^");
@@ -58,7 +58,7 @@ public class Program {
         System.out.printf("Факториал числа %d: %d%n", n, multi);
     }
 
-    private static boolean isPrime(int nu) {
+    static boolean isPrime(int nu) {
         if (nu <= 1)
             return false;
         for (int i = 2; i * i <= nu; i++) {
@@ -79,7 +79,38 @@ public class Program {
         System.out.println("Простые числа в интервале [1, 1000]: " + numbers);
     }
 
-    static void task3(){
-        
+    static void task3() {
+        System.out.print("Первое число: ");
+        double x = Double.parseDouble(scanner.nextLine());
+        System.out.print("Операция? (+ - / *) ");
+        char operation = scanner.nextLine().charAt(0);
+        System.out.print("Второе число: ");
+        double y = Double.parseDouble(scanner.nextLine());
+
+        if (operation == '+' ){
+            System.out.printf("%.2f - %.2f = %.2f\n", x, y, addiction(x, y));
+        }
+        if (operation == '-'){
+            System.out.printf("%.2f - %.2f = %.2f\n", x, y, deduction(x, y));
+        }
+        if (operation == '/'){
+            System.out.printf("%.2f + %.2f = %.2f\n", x, y, division(x, y));
+        }
+        if (operation == '*'){
+            System.out.printf("%.2f - %.2f = %.2f\n", x, y, multiplication(x, y));
+        }
+    }
+
+    static double addiction(double x, double y){
+        return x + y;
+    }
+    static double deduction(double x, double y){
+        return x - y;
+    }
+    static double division(double x, double y){
+        return x / y;
+    }
+    static double multiplication(double x, double y){
+        return x * y;
     }
 }
